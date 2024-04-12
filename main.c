@@ -64,6 +64,8 @@ void GPS(Line depart, Line arrive) {
     }
 }
 
+// on aurait du faire en avec une fonction recusive mais on l'a pas travailler en classe
+// je manque de pratique pour le faire en moins de 2h là 
 
 int main() {
     lignes[0] = ajouterLigne((int[]) {1,2}, 1);
