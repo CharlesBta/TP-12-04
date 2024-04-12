@@ -37,25 +37,22 @@ Line ajouterLigne(int listeCorrespondences[], int nbCorrespondences) {
 
 void GPS(Line depart, Line arrive) {
     int nbArrets;
-    bool found = false;
     for (int i = 0; i < 3; i++) {
-        if (!found){
-            for (int j = 0; j < 50; ++j) {
-                if (found)
-                    break;
-                printf("l: %d, id: %d",lignes[i].correspondences[j], arrive.id);
-                if (lignes[i].correspondences[j] == arrive.id) {
-                    printf("next : %d\n", lignes[i].correspondences[j]);
-                    found = true;
-                    printf("found!\n");
-                    return;
-                } else {
-                    for (int k = 0; k < 50; ++k) {
-                        if (lignes[i].correspondences[k] == arrive.id) {
-                            printf("next: %d\n", lignes[i].correspondences[j]);
-                            found = true;
-                            break;
-                        }
+        bool found = false;
+        for (int j = 0; j < 50; ++j) {
+            if (found)
+                break;
+            if (lignes[i].correspondences[j] == arrive.id) {
+                printf("next : %d\n", lignes[i].correspondences[j]);
+                found = true;
+                printf("found!\n");
+                return;
+            } else {
+                for (int k = 0; k < 50; ++k) {
+                    if (lignes[i].correspondences[k] == arrive.id) {
+                        printf("next1 : %d\n", lignes[i].correspondences[j]);
+                        found = true;
+                        break;
                     }
                 }
             }
